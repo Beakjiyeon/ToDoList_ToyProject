@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'board.apps.BoardConfig', # board 앱 등록
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
