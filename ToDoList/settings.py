@@ -20,10 +20,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '5mql_9b=w(k*weem#-y!pvqrf)&bz5whbb4ix8)#b@a-u0auz$'
+# SECRET_KEY = '5mql_9b=w(k*weem#-y!pvqrf)&bz5whbb4ix8)#b@a-u0auz$'// 헤로쿠 배포하기 위해 주석처리
+SECRET_KEY=os.environ.get('DJANGO_SECRET_KEY','5mql_9b=w(k*weem#-y!pvqrf)&bz5whbb4ix8)#b@a-u0auz$') # 추가_헤로쿠
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True //헤로쿠 배포하기 위해. 남들이 수정 못하게 함
+DEBUG=bool(os.environ.get('DIANGO_DEBUG',True)) # 추가
 
 ALLOWED_HOSTS = []
 
