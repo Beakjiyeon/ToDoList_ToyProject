@@ -27,7 +27,7 @@ SECRET_KEY=os.environ.get('DJANGO_SECRET_KEY','5mql_9b=w(k*weem#-y!pvqrf)&bz5whb
 # DEBUG = True //헤로쿠 배포하기 위해. 남들이 수정 못하게 함
 DEBUG=bool(os.environ.get('DIANGO_DEBUG',True)) # 추가
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [*]
 
 
 # Application definition
@@ -43,7 +43,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'whitenoise.middleware.WhitenoiseMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -123,7 +123,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-
 import dj_database_url
-db_from_env=dj_database_url.config(conn_max_age=500)
+db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
